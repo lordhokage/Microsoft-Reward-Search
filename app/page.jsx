@@ -1,23 +1,18 @@
 'use client';
 import { useState } from 'react';
 import { searchItems } from '@/constant/data';
+import { Copy, Check } from 'lucide-react';
 
 export default function Home() {
   const [text, setText] = useState('');
-  const [copied, setIsCopied] = useState({});
+  const [copiedId, setCopiedId] = useState(null);
   const handleCopy = async (item, index) => {
     try {
       await navigator.clipboard.writeText(item);
-      setIsCopied((prevStates) => ({
-        ...prevStates,
-        [index]: true,
-      }));
+      setCopiedId(index);
 
       setTimeout(() => {
-        setIsCopied((prevStates) => ({
-          ...prevStates,
-          [index]: false,
-        }));
+        setCopiedId(null);
       }, 2000);
     } catch (err) {
       console.log(err.message);
@@ -38,7 +33,7 @@ export default function Home() {
             <li
               className="
               flex flex-row justify-between 
-              gap-10 px-6 py-2 bg-white mb-5 
+              gap-10 px-6 py-4 bg-white mb-5 
               items-center max-w-[600px]
               hover:cursor-pointer
               rounded-lg
@@ -50,18 +45,20 @@ export default function Home() {
               key={index}
               onClick={() => handleCopy(item, index)}
             >
-              <a href={`https://www.bing.com/search?q=${item}`} target="_blank">
+              <a href="about:blank" target="_blank">
                 {item}
               </a>
               <button
-                className="bg-purple-400 p-2 rounded-md hover:bg-slate-500 
-                w-[120px]
-                text-center
+                className={`
+                  p-2 rounded-md ${
+                    copiedId == index ? 'bg-green-500' : 'bg-slate-500'
+                  } 
                 text-white
-                "
+                  text-center
+                  `}
                 onClick={() => handleCopy(item, index)}
               >
-                {copied[index] ? 'Copied' : 'Copy Search'}
+                {copiedId === index ? <Check /> : <Copy />}
               </button>
             </li>
           );
