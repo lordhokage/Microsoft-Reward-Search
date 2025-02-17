@@ -1,7 +1,7 @@
 export const searchItems = [
   {
     title: 'Prepare for Weather',
-    lists: ['Weather', 'hello world'],
+    lists: ['Weather'],
   },
   {
     title: 'Track Package',

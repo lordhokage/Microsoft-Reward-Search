@@ -59,8 +59,12 @@ export default function Home() {
                     className="flex justify-between w-full rounded-md hover:bg-[#d0e7f9] p-3 "
                     key={index}
                   >
-                    <a href="about:blank" target="_blank" className="flex-grow">
-                      {item.title}
+                    <a
+                      href="about:blank"
+                      target="_blank"
+                      className="flex-grow capitalize"
+                    >
+                      {list}
                     </a>
                     <button
                       className={`
