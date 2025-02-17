@@ -12,6 +12,10 @@ export default function Home() {
       setCopiedId(index);
 
       setTimeout(() => {
+        window.open('', '_blank');
+      }, 300);
+
+      setTimeout(() => {
         setCopiedId(null);
       }, 2000);
     } catch (err) {
@@ -27,43 +31,54 @@ export default function Home() {
       <h1 className="text-[32px] font-bold">
         Microsoft Rewards Search key words
       </h1>
-      <ul>
+      <div className="w-[80%] flex flex-col justify-center items-center ">
         {searchItems.map((item, index) => {
           return (
-            <li
+            <div
               className="
-              flex flex-row justify-between 
-              gap-10 px-6 py-4 bg-white mb-5 
+              md
+              w-full
+              flex flex-col justify-between 
+              gap-5 py-4 px-4 bg-white mb-5 
               items-center max-w-[600px]
-              hover:cursor-pointer
-              rounded-lg
+              rounded-md
+            
+              
               shadow-md
               hover:bg-gray-50
               hover:shadow-xl
               transition-all duration-300 ease-in-out
               "
               key={index}
-              onClick={() => handleCopy(item, index)}
+              onClick={() => handleCopy(item.title, index)}
             >
-              <a href="about:blank" target="_blank">
-                {item}
-              </a>
-              <button
-                className={`
-                  p-2 rounded-md ${
-                    copiedId == index ? 'bg-green-500' : 'bg-slate-500'
-                  } 
-                text-white
-                  text-center
-                  `}
-                onClick={() => handleCopy(item, index)}
-              >
-                {copiedId === index ? <Check /> : <Copy />}
-              </button>
-            </li>
+              <h2 className="font-bold text-lg">{item.title}</h2>
+              {item.lists.map((list, index) => {
+                return (
+                  <div
+                    className="flex justify-between w-full rounded-md hover:bg-[#d0e7f9] p-3 "
+                    key={index}
+                  >
+                    <a href="about:blank" target="_blank" className="flex-grow">
+                      {item.title}
+                    </a>
+                    <button
+                      className={`
+                    rounded-md
+                  text-black
+                    text-center
+                    `}
+                      onClick={() => handleCopy(item, index)}
+                    >
+                      {copiedId === index ? <Check /> : <Copy />}
+                    </button>
+                  </div>
+                );
+              })}
+            </div>
           );
         })}
-      </ul>
+      </div>
     </div>
   );
 }

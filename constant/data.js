@@ -1,19 +1,70 @@
 export const searchItems = [
-  'Weather',
-  'track UPS package',
-  'name of movie movie',
-  'restaurant name restaurant near me',
-  'Flights to location',
-  'hotels near me',
-  'my shopping list',
-  'lyrics to song name',
-  'check symptoms for flu',
-  'check latest news',
-  'grocery list',
-  'my grocery list',
-  'the meaning of insert word',
-  'US Elections',
-  'stock market',
-  'game results',
-  'video games',
+  {
+    title: 'Prepare for Weather',
+    lists: ['Weather', 'hello world'],
+  },
+  {
+    title: 'Track Package',
+    lists: ['track UPS package'],
+  },
+  {
+    title: 'Favourite Movie',
+    lists: ['name of movie movie'],
+  },
+  {
+    title: 'Restaurant near me',
+    lists: ['restaurant name restaurant near me'],
+  },
+  {
+    title: 'Find Houses',
+    lists: ['Houses near me'],
+  },
+  {
+    title: 'Shopping list',
+    lists: ['my shopping list'],
+  },
+  {
+    title: 'Search Lyrcis',
+    lists: ['lyrics to song name'],
+  },
+  {
+    title: 'For Traveling',
+    lists: ['directions from City X to City Y'],
+  },
+
+  {
+    title: 'Flight Destination',
+    lists: ['Flight to location'],
+  },
+
+  {
+    title: 'Who won',
+    lists: ['game results'],
+  },
+
+  {
+    title: 'Expand your vocabulary',
+    lists: ['the meaning of insert word'],
+  },
+
+  {
+    title: 'Check Symptoms',
+    lists: ['check symptoms for flu'],
+  },
+  {
+    title: 'Latest News',
+    lists: ['check latest news'],
+  },
+  {
+    title: 'My Shopping List',
+    lists: ['My grocery list'],
+  },
+  {
+    title: 'Up to date with election',
+    lists: ['US Elections'],
+  },
+  {
+    title: 'Hows the Economy',
+    lists: ['stock market'],
+  },
 ];
