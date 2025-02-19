@@ -1,7 +1,23 @@
 export const searchItems = [
   {
+    title: 'Do you know the answer?',
+    lists: [
+      'Challenge yourself with these trivia questions',
+      'Test your knowledge on these topics',
+    ],
+  },
+  {
+    title: 'Complete this puzzle',
+    lists: ['Arrange the tiles to reveal the image'],
+  },
+  {
+    title: 'Quote of the day',
+    lists: ['Start your day with a quote'],
+  },
+
+  {
     title: 'Prepare for Weather',
-    lists: ['Weather'],
+    lists: ['Weather', 'hello world'],
   },
   {
     title: 'Track Package',
