@@ -10,7 +10,7 @@ export default function Home() {
   const [visibleItem, setVisibleItem] = useState(15);
 
   const [theme, setTheme] = useState(() => {
-    return window.localStorage.getItem('theme') || 'light';
+    return 'light';
   });
 
   const handleCopy = async (searchWord, id) => {
@@ -27,12 +27,23 @@ export default function Home() {
   };
 
   useEffect(() => {
+    if (typeof window != 'undefined') {
+      const storedTheme = localStorage.getItem('theme');
+
+      if (storedTheme) {
+        setTheme(storedTheme);
+      }
+    }
+  }, []);
+
+  useEffect(() => {
     if (theme === 'dark') {
       document.documentElement.classList.add('dark');
+      localStorage.setItem('theme', theme);
     } else {
       document.documentElement.classList.remove('dark');
+      localStorage.removeItem('theme', theme);
     }
-    localStorage.setItem('theme', theme);
   }, [theme]);
 
   const toggleTheme = () =>

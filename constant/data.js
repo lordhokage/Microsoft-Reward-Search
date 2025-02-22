@@ -33,7 +33,7 @@ export const searchItems = [
   },
   {
     title: 'Find Houses',
-    lists: ['Houses near me'],
+    lists: ['Houses near me for sale'],
   },
   {
     title: 'Shopping list',
