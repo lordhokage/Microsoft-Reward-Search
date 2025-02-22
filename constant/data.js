@@ -25,7 +25,7 @@ export const searchItems = [
   },
   {
     title: 'Favourite Movie',
-    lists: ['name of movie movie'],
+    lists: ['name of movie'],
   },
   {
     title: 'Restaurant near me',
