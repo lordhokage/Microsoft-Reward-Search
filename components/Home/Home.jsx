@@ -126,9 +126,9 @@ export default function Home() {
         )}
       </div>
       <main className="">
-        <div className="flex justify-center items-center mb-5 ">
+        <div className=" lg:flex  items-center justify-center mb-5 ">
           <button
-            className="bg-gray-300 p-2 rounded-md shadow-md"
+            className="w-fit bg-gray-300 p-2 rounded-md shadow-md"
             onClick={() => setToggleList(!toggleList)}
           >
             {toggleList ? <List /> : <Grid3X3 />}
@@ -143,7 +143,6 @@ export default function Home() {
             return (
               <div
                 className="
-                md
                 w-full
                 flex flex-col justify-between
                 gap-5 py-4 px-4 bg-white mb-5
