@@ -6,7 +6,7 @@ import { useSession } from 'next-auth/react';
 
 import { auth } from '@/auth';
 
-import { List, Grid3X3 } from 'lucide-react';
+import { List, Grid3X3, MoonStar, SunMoon } from 'lucide-react';
 
 import SearchList from '@/components/SearchList';
 import Image from 'next/image';
@@ -77,25 +77,6 @@ export default function Home() {
     );
   }
 
-  // if (!data)
-  //   return (
-  //     <div className="h-screen flex flex-col  justify-center items-center gap-5">
-  //       <h2 className="text-3xl">Please Login to view the content</h2>
-  //       <Link
-  //         href={'/login'}
-  //         className="px-4 py-2 border flex gap-2 border-slate-200 dark:border-slate-700 rounded-lg text-slate-700 dark:text-slate-200 hover:border-slate-400 dark:hover:border-slate-500 hover:text-slate-900 dark:hover:text-slate-300 hover:shadow transition duration-150"
-  //       >
-  //         <img
-  //           className="w-6 h-6"
-  //           src="https://www.svgrepo.com/show/475656/google-color.svg"
-  //           loading="lazy"
-  //           alt="google logo"
-  //         />
-  //         Login with Google
-  //       </Link>
-  //     </div>
-  //   );
-
   return (
     <div
       className="min-h-screen z-50 bg-gray-100 flex gap-10
@@ -110,10 +91,14 @@ export default function Home() {
       </header>
       <div className="flex justify-end items-center p-3 gap-3">
         <button
-          className="bg-slate-500 p-3 rounded-md ml-10 transition-all duration-300 dark:bg-white dark:text-black"
+          className=" p-3 rounded-md ml-10 transition-all duration-300 "
           onClick={toggleTheme}
         >
-          {theme === 'dark' ? 'Turn on light theme' : 'Turn on dark theme'}
+          {theme === 'dark' ? (
+            <SunMoon className="dark:text-white" />
+          ) : (
+            <MoonStar className="text-black" />
+          )}
         </button>
         {data && (
           <Image
